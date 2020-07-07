@@ -14,7 +14,7 @@ public class ShellSort extends InsertSort{
         final int reduce = 2;
         int length = nums.length;
         int step = nums.length;
-        while((step=step/reduce)!=1){
+        while((step=step/reduce)>0){
             for (int i=step;i<length;i++){
                 int mid = nums[i];
                 for (int j=i-step;j>=0;j-=step){
@@ -30,12 +30,16 @@ public class ShellSort extends InsertSort{
                     }
                 }
             }
+            if (step==1){
+                break;
+            }
         }
-        return super.sort(nums);
+        return nums;
     }
 
     public static void main(String[] args) {
         int[] nums = {100,23,1,23,3,5,2,2,5,6,8,1,5,10,22,434,1,3,4,5,8,2,0,3,1,6,4};
+        System.out.println("长度: "+nums.length);
         ShellSort shellSort = new ShellSort();
         int[] ints = shellSort.toSort(nums);
         for (int anInt : ints) {
