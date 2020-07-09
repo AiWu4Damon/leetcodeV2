@@ -18,26 +18,44 @@ public class QuickSort extends AbstractSort {
         if (left>=right){
             return nums;
         }
-        int backleft = left;
-        int backright = right;
+        int backLeft = left;
+        int backRight = right;
         int index = left;
         while(left<right){
             int mid = nums[index];
-//            if (nums[left]>mid){
-//                swap(left,index,nums);
-//                index =left;
-//            }
-            if (nums[right]<mid){
-                swap(right,index,nums);
-                index = right;
+            if (nums[left]<=mid&&mid<=nums[right]){
+                left++;
+                right--;
             }
-//            left++;
-            right--;
+            if (nums[left]>mid&&mid>nums[right]){
+                swap(left,right,nums);
+                left++;
+                right--;
+            }
+            if (nums[left]>mid&&nums[right]>mid){
+                right--;
+            }
+            if (nums[left]<mid&&nums[right]<mid){
+                left++;
+            }
+            if (left-right==1||right==left){
+                if (nums[right]<mid){
+
+                }
+            }
         }
-        qucikSort(nums,backleft,index-1);
-        qucikSort(nums,index+1,backright);
+        qucikSort(nums,backLeft,index-1);
+        qucikSort(nums,index+1,backRight);
         return nums;
     }
+
+    /**
+     * 官方排序
+     * @param arr
+     * @param start
+     * @param end
+     * @return
+     */
     public static int[] qsort(int arr[],int start,int end) {
         int pivot = arr[start];
         int i = start;
