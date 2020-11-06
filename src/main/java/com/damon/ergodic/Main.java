@@ -61,24 +61,24 @@ public class Main {
         System.out.println("forEachFor8 花费时间:"+(start4-start3));
     }
 
-    public static <K, V> ListMultimap<K, V> list2ListMultimap(List<V> list, String keyName) {
-
-        ListMultimap<K, V> map = ArrayListMultimap.create();
-
-        if (CollectionUtils.isEmpty(list) || StringUtils.isBlank(keyName)) {
-            return map;
-        }
-
-        try {
-            for (int i = 0; i < list.size(); i++) {
-                V value = list.get(i);
-                K k = (K) PropertyUtils.getProperty(value, keyName);
-                map.put(k, value);
-            }
-        } catch (Exception e) {
-            throw new IllegalArgumentException("field can't match the key!");
-        }
-        return map;
-    }
+//    public static <K, V> ListMultimap<K, V> list2ListMultimap(List<V> list, String keyName) {
+//
+//        ListMultimap<K, V> map = ArrayListMultimap.create();
+//
+//        if (CollectionUtils.isEmpty(list) || StringUtils.isBlank(keyName)) {
+//            return map;
+//        }
+//
+//        try {
+//            for (int i = 0; i < list.size(); i++) {
+//                V value = list.get(i);
+//                K k = (K) PropertyUtils.getProperty(value, keyName);
+//                map.put(k, value);
+//            }
+//        } catch (Exception e) {
+//            throw new IllegalArgumentException("field can't match the key!");
+//        }
+//        return map;
+//    }
 
 }
