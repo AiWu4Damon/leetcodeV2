@@ -1,6 +1,9 @@
 package com.damon.java8;
 
 
+import com.alibaba.fastjson.JSONObject;
+import lombok.NonNull;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -42,11 +45,24 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Apple apple = new Apple();
-        apple.setColor("Green");
-        apple.setWeight(20);
-        List<Apple> appleNeed = filterAppleNeed(Arrays.asList(new Apple(), new Apple(), apple), Main::filterAppleGreen);
-        List<Apple> appleNeed2 = filterAppleNeed(Arrays.asList(new Apple(), new Apple(), apple), Main::filterAppleWeight);
-        System.out.println(appleNeed2.size());
+//        Apple apple = new Apple();
+//        apple.setColor("Green");
+//        apple.setWeight(20);
+//        List<Apple> appleNeed = filterAppleNeed(Arrays.asList(new Apple(), new Apple(), apple), Main::filterAppleGreen);
+//        List<Apple> appleNeed2 = filterAppleNeed(Arrays.asList(new Apple(), new Apple(), apple), Main::filterAppleWeight);
+//        System.out.println(appleNeed2.size());
+//        JSONObject jsonObject = JSONObject.parseObject(null);
+//        System.out.println(jsonObject.toJSONString());
+        do2(null);
+    }
+
+    /**
+     * {@link java.lang.annotation.ElementType#TYPE_PARAMETER} or
+     * @param s
+     * @return
+     */
+    public static String do2( String s){
+        System.out.println(s);
+        return s;
     }
 }

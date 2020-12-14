@@ -16,6 +16,10 @@ public class GeneralApi extends AbstractApi{
         return "得到api的Url";
     }
 
+    public String getAddress(){
+        return "address";
+    }
+
     public static void main(String[] args) {
         GeneralApi generalApi = new GeneralApi();
         generalApi.setApiName("11");
