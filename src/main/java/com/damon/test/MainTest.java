@@ -3,10 +3,13 @@ package com.damon.test;
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.springframework.beans.BeanUtils;
 
 import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * @ClassName MainTest
@@ -21,11 +24,29 @@ public class MainTest {
     public final static String DEFAULT_FORMAT    = "yyyy-MM-dd HH:mm:ss";
 
     public static void main(String[] args) throws Exception{
-        int a = 9;
-        int b = 7;
-        int a1= 16 & 0x1;
-        HashMap<String, String> map = new HashMap<>(16);
-        Set<Map.Entry<String, String>> entries = map.entrySet();
+//        System.out.println(System.getProperty("file.encoding"));
+//        System.out.println(System.getProperty("sun.jnu.encoding"));
+//        Student student = new Student();
+//        student.setName("damon");
+//        student.put("1","1");
+//        Student student2 = new Student();
+//        BeanUtils.copyProperties(student,student2);
+//        student2.putAll(student);
+//        System.out.println(JSON.toJSONString(student2));
+//        Stream<String> stream = Stream.of("1", "2", "3");
+//
+//        Stream<String> concat = Stream.concat(stream, Stream.of("1"));
+//
+//        ArrayList<String> arrayList = new ArrayList<>();
+//
+//        Iterator<String> iterator = arrayList.iterator();
+//        iterator.hasNext();
+//        iterator.next();
+
+        Student student = new Student();
+        student.setName("name");
+        student.setAge("20");
+        System.out.println(JSON.toJSONString(student));
     }
 
     public static Date parseDateTime(String dateValue, String format) {
@@ -62,7 +83,7 @@ public class MainTest {
                 "name='" + name + '\'' +
                 '}';
     }
-//    @Override
+    //    @Override
     public String toString2() {
         return ToStringBuilder.reflectionToString(this);
     }

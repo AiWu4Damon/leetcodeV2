@@ -35,7 +35,16 @@ public class Student implements Person {
         }};
     }
 
+    public String get(){
+        class B extends HashMap{
+            String s = "B";
+        }
+        return "new B()";
+    }
+
+
     public static void main(String[] args) {
         new Student().eat("food");
     }
+
 }
