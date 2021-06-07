@@ -1,5 +1,7 @@
 package com.damon.pojo;
 
+import org.apache.dubbo.common.extension.SPI;
+
 /**
  * @ClassName Person
  * @Description TODO

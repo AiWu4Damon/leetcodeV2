@@ -1,5 +1,8 @@
 package com.damon.concurrent;
 
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -9,6 +12,8 @@ import java.util.concurrent.CountDownLatch;
  * @Date 2020/7/9 下午6:41
  * @Version 1.0.0
  **/
+@SpringBootConfiguration
+@EnableAutoConfiguration
 public class TestForCountDownLatch {
 
 

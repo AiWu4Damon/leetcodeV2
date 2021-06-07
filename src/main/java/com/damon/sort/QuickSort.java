@@ -10,42 +10,35 @@ package com.damon.sort;
 public class QuickSort extends AbstractSort {
     @Override
     protected int[] sort(int[] nums) {
-//        return qucikSort(nums,0,nums.length-1);
-        return qsort(nums,0,nums.length-1);
+        return qucikSort(nums,0,nums.length-1);
+//        return qsort(nums,0,nums.length-1);
     }
 
     private int[] qucikSort(int[] nums,int left,int right){
-        if (left>=right){
-            return nums;
-        }
         int backLeft = left;
         int backRight = right;
-        int index = left;
+        int mid = nums[backLeft];
         while(left<right){
-            int mid = nums[index];
-            if (nums[left]<=mid&&mid<=nums[right]){
+            while(nums[left]<mid &&left<right){
                 left++;
+            }
+            while (nums[right]>mid && left<right){
                 right--;
             }
-            if (nums[left]>mid&&mid>nums[right]){
+            if ((nums[left]==nums[right]) && (left<right)){
+                left++;
+            }else{
                 swap(left,right,nums);
-                left++;
-                right--;
-            }
-            if (nums[left]>mid&&nums[right]>mid){
-                right--;
-            }
-            if (nums[left]<mid&&nums[right]<mid){
-                left++;
-            }
-            if (left-right==1||right==left){
-                if (nums[right]<mid){
-
-                }
+//                left++;
+//                right--;
             }
         }
-        qucikSort(nums,backLeft,index-1);
-        qucikSort(nums,index+1,backRight);
+        if (backLeft<left-1){
+            qucikSort(nums,backLeft,left-1);
+        }
+        if (right+1<backRight) {
+            qucikSort(nums,right+1,backRight);
+        }
         return nums;
     }
 
